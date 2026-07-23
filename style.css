@@ -39,12 +39,12 @@ body{
 }
 
 .chibi{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:25%;
-    border:5px solid #ff6fa8;
-
+    width:220px;
+    max-width:80%;
+    height:auto;
+    display:block;
+    margin:20px auto;
+    border-radius:20px;
 }
 
 .speech{
