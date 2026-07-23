@@ -1,1 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ffdbe9,#fff6fb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:360px;
+    background:#fff;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(255,105,180,.20);
+}
+
+/* Avatar */
+
+.avatar{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #ff6ea8;
+    margin:auto;
+    display:block;
+}
+
+/* Hello */
+
+.hello{
+    background:#fff3f8;
+    border:2px solid #ff9ac4;
+    border-radius:20px;
+    padding:15px;
+    margin:20px 0;
+}
+
+.hello h2{
+    color:#ff4d92;
+    margin-bottom:8px;
+    font-size:26px;
+}
+
+.hello p{
+    color:#666;
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* Title */
+
+h1{
+    color:#ff4d92;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.sub{
+    color:#777;
+    font-size:15px;
+    margin-bottom:25px;
+}
+
+/* Button */
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
+    padding:15px;
+    margin:15px 0;
+    border-radius:16px;
+    text-decoration:none;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn img{
+    width:30px;
+    height:30px;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.zalo{
+    background:#0068FF;
+}
+
+/* QR */
+
+.qr{
+    margin-top:25px;
+}
+
+.qr img{
+    width:150px;
+    border-radius:12px;
+}
+
+.qr p{
+    margin-top:10px;
+    color:#777;
+    font-size:14px;
+}
+
+/* Footer */
+
+footer{
+    margin-top:20px;
+    color:#999;
+    font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.container{
+    max-width:330px;
+    padding:20px;
+}
+
+.avatar{
+    width:130px;
+    height:130px;
+}
+
+h1{
+    font-size:26px;
+}
+
+.btn{
+    font-size:16px;
+    padding:13px;
+}
+
+.btn img{
+    width:26px;
+    height:26px;
+}
+
+.qr img{
+    width:130px;
+}
+
+}
