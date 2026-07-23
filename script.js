@@ -1,84 +1,74 @@
-// =========================
-// Hoa hồng và tim bay
-// =========================
+// ===============================
+// Bánh Kem Hoa Hồng
+// script.js
+// ===============================
 
-const container = document.getElementById("flowers");
+// Các biểu tượng bay
+const particles = document.getElementById("particles");
+const icons = ["💖","🌸","🌹","✨"];
 
-const icons = ["🌹","💖","🌸","✨"];
+function createParticle(){
 
-function createFlower(){
+    const p = document.createElement("div");
 
-    const flower = document.createElement("div");
+    p.className = "particle";
 
-    flower.className = "flower";
+    p.innerHTML = icons[Math.floor(Math.random()*icons.length)];
 
-    flower.innerHTML = icons[Math.floor(Math.random()*icons.length)];
+    p.style.left = Math.random()*100 + "vw";
 
-    flower.style.left = Math.random()*100+"vw";
+    p.style.fontSize = (18 + Math.random()*18) + "px";
 
-    flower.style.animationDuration = (6+Math.random()*5)+"s";
+    p.style.animationDuration = (6 + Math.random()*5) + "s";
 
-    flower.style.opacity = Math.random()*0.5+0.5;
+    p.style.opacity = Math.random()*0.5 + 0.5;
 
-    flower.style.fontSize = (20+Math.random()*20)+"px";
-
-    container.appendChild(flower);
+    particles.appendChild(p);
 
     setTimeout(()=>{
-        flower.remove();
-    },12000);
+        p.remove();
+    },11000);
 
 }
 
-setInterval(createFlower,350);
+setInterval(createParticle,300);
 
-
-// =========================
-// Hello nhấp nháy
-// =========================
-
-const hello=document.querySelector(".hello");
+// Bong bóng Hello
+const speech = document.querySelector(".speech");
 
 setInterval(()=>{
 
-    hello.animate([
-        {transform:"scale(1)"},
-        {transform:"scale(1.08)"},
-        {transform:"scale(1)"}
+    speech.animate([
+        {transform:"translateY(0px)"},
+        {transform:"translateY(-8px)"},
+        {transform:"translateY(0px)"}
     ],{
-        duration:800
+        duration:1800
     });
 
 },1800);
 
+// Chibi nhún nhẹ
+const chibi = document.querySelector(".chibi");
 
-// =========================
-// Card nghiêng theo chuột
-// =========================
+setInterval(()=>{
 
-const card=document.querySelector(".card");
+    chibi.animate([
+        {transform:"translateY(0px)"},
+        {transform:"translateY(-12px)"},
+        {transform:"translateY(0px)"}
+    ],{
+        duration:2500
+    });
 
-document.addEventListener("mousemove",(e)=>{
+},2500);
 
-    const x=(e.clientX/window.innerWidth-.5)*12;
-
-    const y=(e.clientY/window.innerHeight-.5)*12;
-
-    card.style.transform=
-    `rotateY(${x}deg) rotateX(${-y}deg)`;
-
-});
-
-
-// =========================
-// Nút Facebook/Zalo phát sáng
-// =========================
-
-document.querySelectorAll(".fb,.zalo").forEach(btn=>{
+// Hiệu ứng hover nút
+document.querySelectorAll(".link").forEach(btn=>{
 
     btn.addEventListener("mouseenter",()=>{
 
-        btn.style.boxShadow="0 0 30px rgba(255,105,180,.7)";
+        btn.style.boxShadow="0 0 30px rgba(255,105,180,.6)";
 
     });
 
@@ -90,30 +80,19 @@ document.querySelectorAll(".fb,.zalo").forEach(btn=>{
 
 });
 
+// Card nghiêng theo chuột (chỉ trên máy tính)
+const card = document.querySelector(".card");
 
-// =========================
-// Chữ đổi màu nhẹ
-// =========================
+if(window.innerWidth > 768){
 
-const colors=[
-"#ff4f93",
-"#ff6699",
-"#ff3f7d",
-"#ff5ea8"
-];
+document.addEventListener("mousemove",(e)=>{
 
-let i=0;
+    const x=(e.clientX/window.innerWidth-.5)*8;
+    const y=(e.clientY/window.innerHeight-.5)*8;
 
-setInterval(()=>{
+    card.style.transform=
+    `rotateY(${x}deg) rotateX(${-y}deg)`;
 
-    hello.style.background=colors[i];
+});
 
-    i++;
-
-    if(i>=colors.length){
-
-        i=0;
-
-    }
-
-},1200);
+}
