@@ -1,74 +1,119 @@
-// Tim bay
-const heartContainer = document.getElementById("hearts");
+// =========================
+// Hoa hồng và tim bay
+// =========================
 
-function createHeart() {
+const container = document.getElementById("flowers");
 
-    const heart = document.createElement("div");
+const icons = ["🌹","💖","🌸","✨"];
 
-    heart.className = "heart";
+function createFlower(){
 
-    heart.innerHTML = Math.random() > 0.5 ? "💖" : "🌹";
+    const flower = document.createElement("div");
 
-    heart.style.left = Math.random() * 100 + "vw";
+    flower.className = "flower";
 
-    heart.style.fontSize = (18 + Math.random() * 18) + "px";
+    flower.innerHTML = icons[Math.floor(Math.random()*icons.length)];
 
-    heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+    flower.style.left = Math.random()*100+"vw";
 
-    heartContainer.appendChild(heart);
+    flower.style.animationDuration = (6+Math.random()*5)+"s";
 
-    setTimeout(() => {
-        heart.remove();
-    }, 10000);
+    flower.style.opacity = Math.random()*0.5+0.5;
+
+    flower.style.fontSize = (20+Math.random()*20)+"px";
+
+    container.appendChild(flower);
+
+    setTimeout(()=>{
+        flower.remove();
+    },12000);
 
 }
 
-setInterval(createHeart, 400);
+setInterval(createFlower,350);
 
-// Chữ Hello nhấp nháy
-const hello = document.querySelector(".hello");
 
-let visible = true;
+// =========================
+// Hello nhấp nháy
+// =========================
 
-setInterval(() => {
-    visible = !visible;
-    hello.style.opacity = visible ? "1" : "0.6";
-}, 700);
+const hello=document.querySelector(".hello");
 
-// Hiệu ứng nổi nhẹ cho card
-const card = document.querySelector(".card");
+setInterval(()=>{
 
-document.addEventListener("mousemove", (e) => {
+    hello.animate([
+        {transform:"scale(1)"},
+        {transform:"scale(1.08)"},
+        {transform:"scale(1)"}
+    ],{
+        duration:800
+    });
 
-    const x = (e.clientX / window.innerWidth - 0.5) * 10;
-    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+},1800);
 
-    card.style.transform =
-        `rotateY(${x}deg) rotateX(${-y}deg)`;
+
+// =========================
+// Card nghiêng theo chuột
+// =========================
+
+const card=document.querySelector(".card");
+
+document.addEventListener("mousemove",(e)=>{
+
+    const x=(e.clientX/window.innerWidth-.5)*12;
+
+    const y=(e.clientY/window.innerHeight-.5)*12;
+
+    card.style.transform=
+    `rotateY(${x}deg) rotateX(${-y}deg)`;
 
 });
-function showQR(type){
-
-document.getElementById("qr-facebook")
-.classList.add("qr-hide");
-
-document.getElementById("qr-zalo")
-.classList.add("qr-hide");
 
 
-if(type==="facebook"){
+// =========================
+// Nút Facebook/Zalo phát sáng
+// =========================
 
-document.getElementById("qr-facebook")
-.classList.remove("qr-hide");
+document.querySelectorAll(".fb,.zalo").forEach(btn=>{
 
-}
+    btn.addEventListener("mouseenter",()=>{
+
+        btn.style.boxShadow="0 0 30px rgba(255,105,180,.7)";
+
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+
+        btn.style.boxShadow="";
+
+    });
+
+});
 
 
-if(type==="zalo"){
+// =========================
+// Chữ đổi màu nhẹ
+// =========================
 
-document.getElementById("qr-zalo")
-.classList.remove("qr-hide");
+const colors=[
+"#ff4f93",
+"#ff6699",
+"#ff3f7d",
+"#ff5ea8"
+];
 
-}
+let i=0;
 
-}
+setInterval(()=>{
+
+    hello.style.background=colors[i];
+
+    i++;
+
+    if(i>=colors.length){
+
+        i=0;
+
+    }
+
+},1200);
