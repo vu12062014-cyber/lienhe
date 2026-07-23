@@ -109,22 +109,7 @@ h1{
     background:#0068FF;
 }
 
-/* QR */
 
-.qr{
-    margin-top:25px;
-}
-
-.qr img{
-    width:150px;
-    border-radius:12px;
-}
-
-.qr p{
-    margin-top:10px;
-    color:#777;
-    font-size:14px;
-}
 
 /* Footer */
 
