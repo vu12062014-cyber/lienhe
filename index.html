@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh Kem Hoa Hồng</title>
 
-<title>Bánh Kem Hoa Hồng</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="background-hearts"></div>
+<div id="hearts"></div>
 
-<div class="card">
+<div class="container">
 
-<img src="avatar.jpg" class="avatar">
+    <div class="card">
 
-<h1>🌹 Bánh Kem Hoa Hồng 🌹</h1>
+        <div class="title">
+            🌹 Bánh Kem Hoa Hồng 🌹
+        </div>
 
-<p class="hello">
-👋 Xin chào!<br>
-Rất vui được phục vụ bạn.
-</p>
+        <div class="subtitle">
+            Ngọt ngào từ tâm ❤️
+        </div>
 
-<p class="desc">
-🎂 Bánh sinh nhật<br>
-💐 Bánh kem hoa hồng<br>
-🎉 Nhận đặt bánh theo yêu cầu
-</p>
+        <img src="avatar.jpg" class="avatar">
 
-<a class="btn facebook"
-href="https://www.facebook.com/khocnhe.hoahong"
-target="_blank">
-📘 Facebook
-</a>
+        <div class="hello">
+            👋 Hello!
+        </div>
 
-<a class="btn zalo"
-href="https://zalo.me/0396134347"
-target="_blank">
-💬 Zalo
-</a>
+        <div class="text">
+            Chào mừng bạn đến với<br>
+            <b>Bánh Kem Hoa Hồng</b>
+        </div>
 
-<h2>Quét QR để liên hệ</h2>
+        <div class="buttons">
 
-<div id="qrcode"></div>
+            <a
+            class="facebook"
+            href="https://www.facebook.com/khocnhe.hoahong"
+            target="_blank">
 
-<p class="footer">
-❤️ Hoạt động 24/7
-</p>
+            📘 Facebook
+
+            </a>
+
+            <a
+            class="zalo"
+            href="https://zalo.me/0396134347"
+            target="_blank">
+
+            💬 Zalo
+
+            </a>
+
+        </div>
+
+        <div class="footer">
+
+            ❤️ Hoạt động 24/7 ❤️
+
+        </div>
+
+    </div>
 
 </div>
 
-<script>
-new QRCode(document.getElementById("qrcode"),{
-text:"https://vu12062014-cyber.github.io/lienhe/",
-width:220,
-height:220,
-correctLevel:QRCode.CorrectLevel.H
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
