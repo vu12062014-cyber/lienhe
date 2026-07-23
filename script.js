@@ -47,3 +47,28 @@ document.addEventListener("mousemove", (e) => {
         `rotateY(${x}deg) rotateX(${-y}deg)`;
 
 });
+function showQR(type){
+
+document.getElementById("qr-facebook")
+.classList.add("qr-hide");
+
+document.getElementById("qr-zalo")
+.classList.add("qr-hide");
+
+
+if(type==="facebook"){
+
+document.getElementById("qr-facebook")
+.classList.remove("qr-hide");
+
+}
+
+
+if(type==="zalo"){
+
+document.getElementById("qr-zalo")
+.classList.remove("qr-hide");
+
+}
+
+}
