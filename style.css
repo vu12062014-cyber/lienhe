@@ -135,3 +135,22 @@ h1{
 .btn img{
     width:26px;
     height:26px;
+.phone{
+    display:block;
+    width:100%;
+    margin:15px 0;
+    padding:14px;
+    text-align:center;
+    text-decoration:none;
+    background:#ff5c9d;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    border-radius:16px;
+    transition:.3s;
+}
+
+.phone:hover{
+    background:#e94789;
+    transform:translateY(-3px);
+}
