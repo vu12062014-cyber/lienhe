@@ -1,1 +1,257 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
+body{
+    background:linear-gradient(135deg,#ffd8ea,#fff5fa);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:30px;
+    padding:25px;
+    box-shadow:0 15px 35px rgba(255,105,180,.25);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Chibi */
+
+.chibi{
+    width:220px;
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto 15px;
+    border-radius:20px;
+    animation:float 3s ease-in-out infinite;
+}
+
+/* Bong bóng */
+
+.speech{
+    background:#fff;
+    border:3px solid #ff6aa8;
+    border-radius:20px;
+    padding:15px;
+    margin-bottom:20px;
+    box-shadow:0 8px 20px rgba(255,105,180,.2);
+}
+
+.speech h3{
+    color:#ff3d8d;
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.speech p{
+    color:#666;
+    font-size:18px;
+    line-height:1.6;
+}
+
+h1{
+    color:#ff3d8d;
+    font-size:42px;
+    margin:15px 0;
+}
+
+.subtitle{
+    color:#777;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* Nút */
+
+.link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+
+    width:100%;
+
+    padding:18px;
+
+    margin:15px 0;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.facebook{
+    background:#1877f2;
+}
+
+.facebook:hover{
+    background:#0e5fd1;
+    transform:translateY(-3px);
+}
+
+.zalo{
+    background:#0068ff;
+}
+
+.zalo:hover{
+    background:#0055d6;
+    transform:translateY(-3px);
+}
+
+.icon{
+    width:36px;
+    height:36px;
+}
+
+/* QR */
+
+.qr-box{
+
+    margin-top:25px;
+
+    padding:18px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.qr-box img{
+
+    width:180px;
+
+    border-radius:10px;
+
+}
+
+footer{
+
+    margin-top:20px;
+
+    color:#888;
+
+    font-size:15px;
+
+}
+
+/* Tim bay */
+
+.particle{
+
+    position:fixed;
+
+    top:-50px;
+
+    animation:fall linear forwards;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.container{
+
+padding:20px;
+
+}
+
+.chibi{
+
+width:180px;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.link{
+
+font-size:20px;
+
+padding:16px;
+
+}
+
+.speech h3{
+
+font-size:28px;
+
+}
+
+.speech p{
+
+font-size:16px;
+
+}
+
+.qr-box img{
+
+width:150px;
+
+}
+
+}
