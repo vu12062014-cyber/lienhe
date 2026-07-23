@@ -3,57 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bánh Kem Hoa Hồng</title>
+
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
 
-<div class="container">
+<div class="background-hearts"></div>
 
 <div class="card">
 
-<img src="avatar.jpg" class="chibi">
+<img src="avatar.jpg" class="avatar">
 
 <h1>🌹 Bánh Kem Hoa Hồng 🌹</h1>
 
-<p>Xin chào 👋<br>Chọn kênh liên hệ bên dưới</p>
+<p class="hello">
+👋 Xin chào!<br>
+Rất vui được phục vụ bạn.
+</p>
 
-<a class="facebook"
+<p class="desc">
+🎂 Bánh sinh nhật<br>
+💐 Bánh kem hoa hồng<br>
+🎉 Nhận đặt bánh theo yêu cầu
+</p>
+
+<a class="btn facebook"
 href="https://www.facebook.com/khocnhe.hoahong"
 target="_blank">
 📘 Facebook
 </a>
 
-<a class="zalo"
+<a class="btn zalo"
 href="https://zalo.me/0396134347"
 target="_blank">
 💬 Zalo
 </a>
 
-<footer>
-Hoạt động 24/7 ❤️
-</footer>
+<h2>Quét QR để liên hệ</h2>
+
+<div id="qrcode"></div>
+
+<p class="footer">
+❤️ Hoạt động 24/7
+</p>
 
 </div>
-
-</div>
-<div class="qr-section">
-    <h3>📱 Quét để liên hệ</h3>
-    <div id="qrcode"></div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
-new QRCode(document.getElementById("qrcode"), {
-    text: "https://vu12062014-cyber.github.io/lienhe/",
-    width: 220,
-    height: 220,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H
+new QRCode(document.getElementById("qrcode"),{
+text:"https://vu12062014-cyber.github.io/lienhe/",
+width:220,
+height:220,
+correctLevel:QRCode.CorrectLevel.H
 });
 </script>
+
 </body>
 </html>
