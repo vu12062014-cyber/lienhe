@@ -205,4 +205,11 @@ font-size:28px;
 
 }
 
+}body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("rose-bg.png") center/cover no-repeat;
+    opacity:.08;
+    z-index:-1;
 }
