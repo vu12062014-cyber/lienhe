@@ -38,6 +38,22 @@ Hoạt động 24/7 ❤️
 </div>
 
 </div>
+<div class="qr-section">
+    <h3>📱 Quét để liên hệ</h3>
+    <div id="qrcode"></div>
+</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+new QRCode(document.getElementById("qrcode"), {
+    text: "https://vu12062014-cyber.github.io/lienhe/",
+    width: 220,
+    height: 220,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
+</script>
 </body>
 </html>
