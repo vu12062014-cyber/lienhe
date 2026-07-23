@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
@@ -6,36 +8,34 @@
 }
 
 body{
-    background:linear-gradient(135deg,#ffd8ea,#fff5fa);
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
+    padding:25px;
+    background:linear-gradient(135deg,#ffd9e8,#fff4f8,#ffe4ef);
     overflow-x:hidden;
 }
 
 .container{
     width:100%;
-    max-width:420px;
+    max-width:430px;
     background:#fff;
-    border-radius:30px;
-    padding:25px;
-    box-shadow:0 15px 35px rgba(255,105,180,.25);
+    border-radius:35px;
+    padding:30px 25px;
     text-align:center;
+    box-shadow:0 15px 40px rgba(255,105,180,.25);
     position:relative;
-    overflow:hidden;
 }
 
 /* Chibi */
 
 .chibi{
-    width:220px;
-    max-width:100%;
+    width:210px;
     height:auto;
     display:block;
-    margin:0 auto 15px;
-    border-radius:20px;
+    margin:0 auto 20px;
+    border-radius:25px;
     animation:float 3s ease-in-out infinite;
 }
 
@@ -43,135 +43,124 @@ body{
 
 .speech{
     background:#fff;
-    border:3px solid #ff6aa8;
+    border:3px solid #ff5c9d;
     border-radius:20px;
-    padding:15px;
+    padding:18px;
     margin-bottom:20px;
     box-shadow:0 8px 20px rgba(255,105,180,.2);
 }
 
-.speech h3{
-    color:#ff3d8d;
+.speech h2{
+    color:#ff3f8e;
     font-size:34px;
     margin-bottom:8px;
 }
 
 .speech p{
-    color:#666;
-    font-size:18px;
+    color:#555;
     line-height:1.6;
+    font-size:17px;
 }
 
+/* Tiêu đề */
+
 h1{
-    color:#ff3d8d;
+    color:#ff3f8e;
     font-size:42px;
-    margin:15px 0;
+    font-weight:700;
+    margin-top:10px;
 }
 
 .subtitle{
     color:#777;
-    font-size:18px;
-    margin-bottom:30px;
+    font-size:17px;
+    margin-top:8px;
+    margin-bottom:28px;
 }
 
-/* Nút */
+/* Button */
 
 .link{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
-
     width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
 
     padding:18px;
 
     margin:15px 0;
 
-    text-decoration:none;
-
-    color:#fff;
-
-    font-size:24px;
-
-    font-weight:bold;
-
     border-radius:18px;
 
-    transition:.3s;
+    text-decoration:none;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    transition:.35s;
 }
 
 .facebook{
-    background:#1877f2;
+    background:#1877F2;
 }
 
 .facebook:hover{
-    background:#0e5fd1;
-    transform:translateY(-3px);
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(24,119,242,.35);
 }
 
 .zalo{
-    background:#0068ff;
+    background:#0068FF;
 }
 
 .zalo:hover{
-    background:#0055d6;
-    transform:translateY(-3px);
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,104,255,.35);
 }
 
-.icon{
-    width:36px;
-    height:36px;
+.link img{
+    width:34px;
+    height:34px;
 }
 
 /* QR */
 
 .qr-box{
-
-    margin-top:25px;
-
-    padding:18px;
-
+    margin-top:30px;
     background:#fff;
+    border-radius:22px;
+    padding:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
 
-    border-radius:20px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
+.qr-box h3{
+    color:#ff4a94;
+    margin-bottom:15px;
 }
 
 .qr-box img{
-
     width:180px;
-
-    border-radius:10px;
-
+    border-radius:12px;
 }
 
 footer{
-
-    margin-top:20px;
-
-    color:#888;
-
+    margin-top:25px;
+    color:#999;
     font-size:15px;
-
 }
 
 /* Tim bay */
 
 .particle{
-
     position:fixed;
-
-    top:-50px;
-
+    top:-40px;
     animation:fall linear forwards;
-
     pointer-events:none;
-
     z-index:999;
-
 }
 
 @keyframes fall{
@@ -191,7 +180,7 @@ opacity:0;
 @keyframes float{
 
 0%,100%{
-transform:translateY(0);
+transform:translateY(0px);
 }
 
 50%{
@@ -206,13 +195,25 @@ transform:translateY(-10px);
 
 .container{
 
-padding:20px;
+padding:22px;
 
 }
 
 .chibi{
 
 width:180px;
+
+}
+
+.speech h2{
+
+font-size:28px;
+
+}
+
+.speech p{
+
+font-size:15px;
 
 }
 
@@ -224,7 +225,7 @@ font-size:34px;
 
 .subtitle{
 
-font-size:16px;
+font-size:15px;
 
 }
 
@@ -233,18 +234,6 @@ font-size:16px;
 font-size:20px;
 
 padding:16px;
-
-}
-
-.speech h3{
-
-font-size:28px;
-
-}
-
-.speech p{
-
-font-size:16px;
 
 }
 
