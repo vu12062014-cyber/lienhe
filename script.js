@@ -1,160 +1,214 @@
-// =====================
-// VIP EFFECT
-// =====================
+// ==========================
+// Premium Landing Page Effects
+// ==========================
 
-// Hoa, tim, lấp lánh
 const particles = document.getElementById("particles");
-const icons = ["🌸","🌹","💖","✨","💕","🌺"];
+const card = document.querySelector(".card");
+
+// Các biểu tượng rơi
+const icons = ["❤️","💖","💕","🌸","🌹","🌺","✨"];
+
+// ==========================
+// Tim bay + Hoa rơi
+// ==========================
 
 function createParticle(){
 
-    const p=document.createElement("div");
+    const item = document.createElement("div");
 
-    p.className="particle";
+    item.className = "particle";
 
-    p.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+    item.innerHTML = icons[Math.floor(Math.random()*icons.length)];
 
-    p.style.left=Math.random()*100+"vw";
+    item.style.left = Math.random()*100 + "vw";
 
-    p.style.fontSize=(18+Math.random()*22)+"px";
+    item.style.fontSize = (18 + Math.random()*20) + "px";
 
-    p.style.animationDuration=(6+Math.random()*6)+"s";
+    item.style.animationDuration = (6 + Math.random()*5) + "s";
 
-    p.style.opacity=Math.random();
+    item.style.opacity = 0.5 + Math.random()*0.5;
 
-    particles.appendChild(p);
+    particles.appendChild(item);
 
     setTimeout(()=>{
-
-        p.remove();
-
+        item.remove();
     },12000);
 
 }
 
-setInterval(createParticle,250);
+setInterval(createParticle,220);
 
-// =====================
-// CARD 3D
-// =====================
-
-const card=document.querySelector(".glass");
+// ==========================
+// Card 3D theo chuột
+// ==========================
 
 document.addEventListener("mousemove",(e)=>{
 
-    const x=(e.clientX/window.innerWidth-.5)*16;
+    const x = (e.clientX/window.innerWidth - 0.5) * 18;
+    const y = (e.clientY/window.innerHeight - 0.5) * 18;
 
-    const y=(e.clientY/window.innerHeight-.5)*16;
-
-    card.style.transform=
+    card.style.transform =
     `rotateY(${x}deg)
      rotateX(${-y}deg)`;
 
 });
 
-// =====================
-// Avatar nổi
-// =====================
+// Reset khi chuột ra ngoài
 
-const avatar=document.querySelector(".avatar");
+document.addEventListener("mouseleave",()=>{
+
+    card.style.transform =
+    "rotateX(0deg) rotateY(0deg)";
+
+});
+
+// ==========================
+// Chibi nổi nhẹ
+// ==========================
+
+const chibi = document.querySelector(".chibi");
 
 setInterval(()=>{
 
-avatar.animate([
+    chibi.animate([
 
-{transform:"translateY(0px)"},
+        {transform:"translateY(0px)"},
 
-{transform:"translateY(-12px)"},
+        {transform:"translateY(-10px)"},
 
-{transform:"translateY(0px)"}
+        {transform:"translateY(0px)"}
 
-],{
+    ],{
 
-duration:2500
+        duration:2500
 
-});
+    });
 
 },2500);
 
-// =====================
+// ==========================
 // Hello nhún
-// =====================
+// ==========================
 
-const hello=document.querySelector(".hello");
+const hello = document.querySelector(".hello");
 
 setInterval(()=>{
 
-hello.animate([
+    hello.animate([
 
-{transform:"scale(1)"},
+        {transform:"scale(1)"},
 
-{transform:"scale(1.05)"},
+        {transform:"scale(1.05)"},
 
-{transform:"scale(1)"}
+        {transform:"scale(1)"}
 
-],{
+    ],{
 
-duration:1800
+        duration:1800
 
-});
+    });
 
 },1800);
 
-// =====================
-// Button Glow
-// =====================
+// ==========================
+// Hiệu ứng nút
+// ==========================
 
 document.querySelectorAll(".btn").forEach(btn=>{
 
-btn.addEventListener("mouseenter",()=>{
+    btn.addEventListener("mouseenter",()=>{
 
-btn.style.boxShadow="0 0 30px rgba(255,105,180,.6)";
+        btn.style.transform="translateY(-5px) scale(1.03)";
+        btn.style.boxShadow="0 0 30px rgba(255,105,180,.45)";
+
+    });
+
+    btn.addEventListener("mouseleave",()=>{
+
+        btn.style.transform="";
+        btn.style.boxShadow="";
+
+    });
+
+});
+
+// ==========================
+// Click tạo tim
+// ==========================
+
+document.addEventListener("click",(e)=>{
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML="💖";
+
+    heart.style.position="fixed";
+
+    heart.style.left=e.clientX+"px";
+
+    heart.style.top=e.clientY+"px";
+
+    heart.style.fontSize="28px";
+
+    heart.style.pointerEvents="none";
+
+    heart.style.transition="all 1s ease";
+
+    heart.style.zIndex="9999";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.style.transform="translateY(-100px) scale(2)";
+        heart.style.opacity="0";
+
+    },20);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },1100);
 
 });
 
-btn.addEventListener("mouseleave",()=>{
+// ==========================
+// Hạt sáng nền
+// ==========================
 
-btn.style.boxShadow="";
+function sparkle(){
 
-});
+    const s=document.createElement("div");
 
-});
+    s.style.position="fixed";
+    s.style.left=Math.random()*100+"vw";
+    s.style.top=Math.random()*100+"vh";
+    s.style.width="4px";
+    s.style.height="4px";
+    s.style.background="#fff";
+    s.style.borderRadius="50%";
+    s.style.boxShadow="0 0 12px #fff";
+    s.style.opacity="0";
+    s.style.pointerEvents="none";
+    s.style.zIndex="1";
+    s.style.transition="all 2s linear";
 
-// =====================
-// Click Effect
-// =====================
+    document.body.appendChild(s);
 
-document.addEventListener("click",e=>{
+    setTimeout(()=>{
+        s.style.opacity="1";
+    },50);
 
-const heart=document.createElement("div");
+    setTimeout(()=>{
+        s.style.opacity="0";
+        s.style.transform="scale(3)";
+    },1500);
 
-heart.innerHTML="💖";
+    setTimeout(()=>{
+        s.remove();
+    },2200);
 
-heart.style.position="fixed";
+}
 
-heart.style.left=e.clientX+"px";
-
-heart.style.top=e.clientY+"px";
-
-heart.style.fontSize="28px";
-
-heart.style.pointerEvents="none";
-
-heart.style.transition="1s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.style.transform="translateY(-80px) scale(2)";
-heart.style.opacity="0";
-
-},20);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},1200);
-
-});
+setInterval(sparkle,250);
