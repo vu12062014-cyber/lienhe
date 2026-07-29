@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -7,150 +7,342 @@
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:linear-gradient(135deg,#ffdbe9,#fff6fb);
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
-    padding:20px;
+    padding:30px;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at top left,#ffd6ea 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#ffc4dc 0%,transparent 35%),
+    linear-gradient(135deg,#fff7fb,#ffe5f0,#ffd6ea);
 }
+
+/* nền phát sáng */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle,#ffffff55 2px,transparent 3px);
+
+background-size:70px 70px;
+
+animation:movebg 15s linear infinite;
+
+pointer-events:none;
+
+opacity:.45;
+
+}
+
+/* Card */
 
 .container{
-    width:100%;
-    max-width:360px;
-    background:#fff;
-    border-radius:25px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 15px 35px rgba(255,105,180,.20);
+
+width:100%;
+
+max-width:430px;
+
+perspective:1500px;
+
 }
 
-/* Avatar */
+.glass{
+
+background:rgba(255,255,255,.72);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.6);
+
+border-radius:35px;
+
+padding:28px;
+
+box-shadow:
+
+0 30px 60px rgba(255,105,180,.25),
+
+0 10px 20px rgba(255,255,255,.6) inset;
+
+transition:.35s;
+
+}
+
+/* Chibi */
+
+.hero{
+
+position:relative;
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
 
 .avatar{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid #ff6ea8;
-    margin:auto;
-    display:block;
+
+width:180px;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:6px solid #fff;
+
+box-shadow:
+
+0 15px 35px rgba(255,105,180,.35);
+
+animation:float 4s ease-in-out infinite;
+
 }
 
 /* Hello */
 
 .hello{
-    background:#fff3f8;
-    border:2px solid #ff9ac4;
-    border-radius:20px;
-    padding:15px;
-    margin:20px 0;
+
+position:absolute;
+
+left:-5px;
+
+top:5px;
+
+background:white;
+
+padding:15px;
+
+border-radius:18px;
+
+width:180px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.hello::after{
+
+content:"";
+
+position:absolute;
+
+left:35px;
+
+bottom:-14px;
+
+border:8px solid transparent;
+
+border-top-color:white;
+
 }
 
 .hello h2{
-    color:#ff4d92;
-    margin-bottom:8px;
-    font-size:26px;
+
+color:#ff4a91;
+
+font-size:28px;
+
+margin-bottom:5px;
+
 }
 
 .hello p{
-    color:#666;
-    font-size:15px;
-    line-height:1.6;
+
+font-size:14px;
+
+color:#666;
+
+line-height:1.5;
+
 }
 
-/* Title */
+/* Tiêu đề */
 
 h1{
-    color:#ff4d92;
-    font-size:30px;
-    margin-bottom:10px;
+
+font-size:32px;
+
+font-weight:800;
+
+color:#ff3f87;
+
+margin:18px 0 10px;
+
 }
 
 .sub{
-    color:#777;
-    font-size:15px;
-    margin-bottom:25px;
+
+color:#777;
+
+line-height:1.6;
+
+margin-bottom:25px;
+
 }
 
 /* Button */
 
 .btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    width:100%;
-    padding:15px;
-    margin:15px 0;
-    border-radius:16px;
-    text-decoration:none;
-    color:#fff;
-    font-size:18px;
-    font-weight:600;
-    transition:.3s;
-}
 
-.btn:hover{
-    transform:translateY(-3px);
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+width:100%;
+
+padding:16px;
+
+margin:14px 0;
+
+border-radius:18px;
+
+text-decoration:none;
+
+font-size:19px;
+
+font-weight:700;
+
+color:white;
+
+transition:.35s;
+
 }
 
 .btn img{
-    width:30px;
-    height:30px;
+
+width:32px;
+
+height:32px;
+
 }
 
 .facebook{
-    background:#1877F2;
+
+background:linear-gradient(135deg,#1877F2,#4f9dff);
+
 }
 
 .zalo{
-    background:#0068FF;
 
+background:linear-gradient(135deg,#0068ff,#30b3ff);
 
-/* Mobile */
-
-@media(max-width:480px){
-
-.container{
-    max-width:330px;
-    padding:20px;
 }
 
-.avatar{
-    width:130px;
-    height:130px;
+.btn:hover{
+
+transform:translateY(-4px) scale(1.02);
+
 }
 
-h1{
-    font-size:26px;
-}
+/* Điện thoại */
 
-.btn{
-    font-size:16px;
-    padding:13px;
-}
-
-.btn img{
-    width:26px;
-    height:26px;
 .phone{
-    display:block;
-    width:100%;
-    margin:15px 0;
-    padding:14px;
-    text-align:center;
-    text-decoration:none;
-    background:#ff5c9d;
-    color:#fff;
-    font-size:18px;
-    font-weight:600;
-    border-radius:16px;
-    transition:.3s;
+
+display:block;
+
+margin:18px 0;
+
+padding:15px;
+
+border-radius:18px;
+
+background:#ff4f96;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:700;
+
 }
 
-.phone:hover{
-    background:#e94789;
-    transform:translateY(-3px);
+/* QR */
+
+.qrbox{
+
+margin-top:25px;
+
+padding:18px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.qrbox img{
+
+width:180px;
+
+border-radius:12px;
+
+}
+
+/* Footer */
+
+footer{
+
+margin-top:20px;
+
+color:#888;
+
+font-size:14px;
+
+}
+
+/* Animation */
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+@keyframes movebg{
+
+from{
+
+background-position:0 0;
+
+}
+
+to{
+
+background-position:70px 70px;
+
+}
+
 }
